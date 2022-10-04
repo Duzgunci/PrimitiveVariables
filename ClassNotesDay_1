@@ -1,0 +1,29 @@
+
+String myString = 'StringtoBlob@544 and Sept First';
+Blob myBlob = Blob.valueof(myString);
+Integer sizeofString = myBlob.size();
+system.debug('The size of the string is: '+sizeofString);
+
+Decimal lightspeedOne= 1233333113/0.0145;
+Double lightspeedTwo = 1233333113/0.0145;
+system.debug('Light Speed one:'+lightspeedOne);
+system.debug('Light Speed two:'+lightspeedTwo);
+
+Long myInteger= 7000000000L; //Integer did not work here
+system.debug('The number of people in the world is:'+myInteger);
+
+Boolean isBig = 3>2;
+system.debug('First Step:'+isBig);
+isBig = 3<2;
+system.debug('Second Step:'+isBig);
+isBig = 3==2;
+system.debug('Third Step:'+isBig);
+//isBig = Notsure; isBig supposed to be true or false
+//system.debug('Last Step:'+isBig);
+
+Date tDay=Date.today();
+system.debug('Today is:'+tDay);
+DateTime tDayTime= DateTime.now();
+system.debug ('Date and Time is:'+tDayTime);
+Time timeNow = Time.newInstance(6, 46, 59, 00);
+system.debug ('Time is:'+timeNow);
