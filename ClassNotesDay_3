@@ -1,0 +1,167 @@
+/*
+
+Dog myDog1= new Dog();
+myDog1.nameforClass= 'Rex';
+myDog1.ageforClass=3;
+myDog1.show(); //static method
+myDog1.show2(); // non-static method
+*/
+
+Dog.show();// show is method name while Dog is class name
+
+string myString= '1662656';
+integer myInteger= integer.valueOf(myString);
+system.debug('The integer is '+myInteger);
+Long myInt2= 166890099000L;
+string myString2= String.valueOf(myInt2);
+system.debug('My new string is' +myString2);
+
+
+--------**********Apex class:******--------------
+
+public class Dog { // public is access modifier
+ Public string nameofDog;// Public static string nameofClass
+ Private integer ageofDog; // Public static Integer ageforClass
+ Private string breedofDog;
+    
+ Public Dog (integer age){ // Here we declare a constructor
+        if(age<0 || age>10){
+            system.debug('Age of a dog cannot be negative or more than 10');
+            ageofDog=10;
+        } else{
+            
+        ageofDog=age;  
+    }
+ }
+ Public Dog(){
+        system.debug('Empty constructor');
+    }
+    Public Dog(Integer age,string breed){
+        breedofDog=breed;
+        if (age>0){
+            ageofDog=age;
+        }else{
+            system.debug ('The age of a dog cannot be negative');
+        }
+    }
+   /*
+    Public static void show(){
+//string name= 'Rex';
+        //Integer age=4;
+        system.debug('I am a static method');
+    }  
+*/
+   Public void show2(){
+        system.debug('I am a non static method'+' Name: ' +nameofDog+' Age: ' +ageofDog + ' Breed : '+breedofDog);
+
+        
+    }
+}
+--------************Debug Screen: ********------------------
+
+Dog myDog3=new Dog(16);
+myDog3.nameofDog= 'XYZ';
+//myDog3.ageofDog=5;//not working since it is private
+//myDog3.Dog(16)---> No need to create another method
+myDog3.show2();
+
+
+Dog myDog3=new Dog(-11, 'Pitbull');
+myDog3.nameofDog= 'XYZ';
+//myDog3.ageofDog=5;//not working since it is private
+//myDog3.Dog(16)---> No need to create another method
+myDog3.show2();
+
+
+Dog myDog3=new Dog(16, 'Alabay');
+Dog.nameofDog= 'Garagoz';
+//myDog3.ageofDog=5;//not working since it is private
+//myDog3.Dog(16)---> No need to create another method
+Dog.show(); // we called static value over here
+myDog3.show2();
+
+public class Dog { // public is access modifier
+ 	Public static string nameofDog;// Public static string nameofClass
+ 	Private static integer ageofDog; // Public static Integer ageforClass
+ 	Private static string breedofDog;
+    
+ 	Public Dog (integer age){ // Here we declare a constructor
+        if(age<0 || age>10){
+            system.debug('Age of a dog cannot be negative or more than 10');
+            ageofDog=10;
+        } else{
+            
+        ageofDog=age;  
+    }
+ }
+ Public Dog(){
+        system.debug('Empty constructor');
+    }
+    Public Dog(Integer age,string breed){
+        breedofDog=breed;
+        if (age>0){
+            ageofDog=age;
+        }else{
+            system.debug ('The age of a dog cannot be negative');
+        }
+    }
+  
+    Public static void show(){
+    //string name= 'Rex';
+    //Integer age=4;
+    system.debug('I am a static method');
+    }  
+
+    Public void show2(){
+        system.debug('I am a non static method'+' Name: ' +nameofDog+' Age: ' +ageofDog + ' Breed : '+breedofDog);
+        
+    }
+}
+
+/*
+Rectangle myRec=new Rectangle();
+myRec.width=14.25;
+myRec.height=12.75;
+myRec.Area();
+myRec.Perimeter;
+public interface Shapes {
+
+	Decimal Area();
+    Decimal Perimeter();    
+    
+}
+
+Apex class: (Circle)
+public class Circle {
+ 	Public Decimal r;
+    Public Decimal pi=3.14;
+    Public Decimal Area(){
+        
+        system.debug('The area of circle is '+(pi*r*r));
+        return pi*r*r;
+    }
+    Public Decimal Perimeter(){
+            
+        system.debug('The perimeter of circle is '+(2*pi*r));
+        return 2*pi*r;
+        }
+    
+}
+
+-------------**********Debug :********-------------------
+
+Circle myCircle=new Circle();
+myCircle.r=12.75;
+myCircle.Area();
+myCircle.Perimeter();
+
+
+
+
+
+
+
+
+
+
+
