@@ -1,0 +1,45 @@
+// This example illustrates static vs. non-static methods
+public class LightJedi {
+  public void slashLightsaber() {
+    // Vooooom!
+  }
+public static String getJediCode() {
+   String code  = 'There is no emotion, there is peace.';
+           code += 'There is no ignorance, there is knowledge.';
+           code += 'There is no passion, there is serenity.';
+           code += 'There is no death, there is the Force.';
+    return code;
+  }
+  
+
+ public static String describeRank(String rank) {
+   String description;
+    if (rank == 'Initiate') {
+      description = 'Jedi hopeful';
+    } else if (rank == 'Padawan') {
+      description = 'Apprentice of a Jedi Knight';
+ } else if (rank == 'Knight') {
+      description = 'Completed the Jedi Trials';
+    } else if (rank == 'Master') {
+      description = 'David Liu';
+    }
+    return description;
+  }
+}
+
+----*****Access static variables only by class name, not object name
+
+// Elsewhere...
+LightJedi davidLiu = new LightJedi();
+
+// Non-static methods require an object for context
+davidLiu.slashLightsaber();
+
+
+// Static methods aren't related to a particular object
+LightJedi.getJediCode();
+
+
+// You don't even use an object to call a static method!
+System.debug(LightJedi.describeRank('Master')); // David Liu
+
