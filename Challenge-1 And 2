@@ -1,0 +1,67 @@
+-----************Challenge 1
+    
+-->   3 students in Batch-1
+    Matt, Max, Ben
+    
+-->   5 students in Batch-2
+    Selda, Hasan, Jerry, Oktay, Ahmed
+    
+-->   2 students in Batch-3
+    Merdan, Jane
+---> Display/print these students with their batches
+    
+   Batch-1---> 'Matt', 'Max', 'Ben'
+   Batch-2---> '
+
+
+-------************Answer:
+
+list <string> Batch1= new list <string>{'Matt','Max','Ben'};
+list<string> Batch2= new list <string> {'Selda','Hasan','Jerry','Oktay','Ahmed'};
+list<string>Batch3= new list <string>{'Merdan','Jane'};
+
+Map<String, list<string>> claruswayBatches= new Map<String, list<string>>();//Here key is Batch# and value is list of students    
+claruswayBatches.put('Batch-1', Batch1);
+claruswayBatches.put('Batch-2', Batch2);    
+claruswayBatches.put('Batch31', Batch3);
+
+system.debug('The students in Clarusway are' +claruswayBatches);
+    
+
+ 
+ ---------****************Challenge 2
+        
+A group of students go for a dinner. They ate pizza. See the rates below.
+--> 1 slice => $8/slice
+--> 2-3 slices => $7/slice
+--> more than 3 => $6/slice
+--> Hasan 3 slice, Ahmet 1 slice, and Max 4 slices... Display/print the individual and total bills. Hint: Use if/else condition or Ternary Operator
+Answer:
+final Integer hasanSlices=3;
+final Integer ahmetSlices=1;
+final Integer maxSlices=4;
+Integer totalBill;
+/*
+if (hasanSlices==1){
+    integer hasanPays=hasanSlices*8;
+        } else if{ hasanSlices<=3){
+            integer hasanPays=hasanSlices*7;
+        }else{ 
+            integer hasanPays=hasanSlices*6;
+        }
+    
+        }
+
+*/
+
+Integer hasanPays= hasanSlices==1 ? hasanSlices*8 : hasanSlices <= 3? hasanSlices *7 : hasanSlices *6;
+system.debug('Hasan pays $ '+hasanPays);
+Integer ahmetPays= ahmetSlices==1 ? ahmetSlices*8 : ahmetSlices <= 3? ahmetSlices *7 : ahmetSlices *6;
+system.debug('Ahmet pays $ '+ahmetPays);
+
+Integer maxPays= maxSlices==1 ? maxSlices*8 : maxSlices <= 3? maxSlices *7 : maxSlices *6;
+system.debug('Max pays $ '+maxPays);
+
+totalBill=hasanPays+ahmetPays+maxPays;
+    system.debug('Total Bill is $' +totalBill);
+
