@@ -1,0 +1,103 @@
+/*
+string fName='Fatih';
+fName= 'Selda';
+system.debug(fName);
+
+Integer num1=15;
+Integer num2=(56-45);//data type integer, so don't quotation mark
+system.debug(num1+num2);
+
+*/
+
+Integer firstNum=(48/8-4)*(24*2);
+Integer secondNum=24*3;
+Integer thirdNum=56;
+system.debug('Sum is ' +(firstNum+secondNum+thirdNum));
+
+decimal simpleInterest;
+decimal princpl=100000;
+decimal rate=6.1;
+integer noofyears=5;
+simpleInterest= (princpl*rate*noofyears)/100;
+system.debug(simpleInterest);
+
+
+Date newDate=Date.newInstance(2023, 8, 22);
+system.debug ('new Date is ' +newDate);
+Date tDay=Date.today();
+integer month = tDay.month();
+system.debug('September is the number ' +month);
+Integer numOfMonthBwn = tDay.monthsBetween(newDate);
+system.debug('Number of months between are ' +numOfMonthBwn);
+Boolean isLeapYear=Date.isLeapYear(newDate.year());
+system.debug('is new date leap year? '+isLeapYear);
+DateTime crntTime=DateTime.now();
+system.debug('GMT time now is ' +crntTime);
+*/
+
+string myCrnTime=DateTime.now().format();
+system.debug('My Current Time is  ' +myCrnTime);
+
+public class Cars {
+    public string model; // variable
+    public string color; // variable
+    public Date manfDate; // variable
+    public Boolean isClean;// variable
+    public void display(){ // defined a method
+        system.debug ('Model of the car is ' +model);
+        system.debug ('Color of the car is ' +color);
+		system.debug ('Manufactured date of the car is ' +manfDate);
+        system.debug ('Is the car cleantitle? ' +isClean);
+   }    
+}
+----------------************In Debug screen:**********-------------------
+
+Cars myCar=new Cars();
+myCar.model= 'Toyota';
+myCar.color='Gray';
+myCar.manfDate= Date.newInstance(2016, 4, 25);
+myCar.isClean= True;
+myCar.display();
+
+
+public class Employees {
+    public string name;
+    public string title;
+    public integer age;
+    public void display(){
+        system.debug (' The name of the employee is ' +name);
+        system.debug (' The title of the employee is ' +title);
+        system.debug (' The age of the employee is ' +age);
+  
+    }   
+}
+----------------************In Debug screen:**********-------------------
+
+Employees newEmployee= new Employees();
+newEmployee.name= 'Sara';
+newEmployee.title= 'System Admin';
+newEmployee.age= 34;
+newEmployee.display();
+
+
+public class Employeesv2 {
+
+	public string name;
+	public string title;
+	public Integer age;
+    public void displayInfo(){
+        
+        system.debug('Employee name is '+name);
+        system.debug('Employee title is '+title);
+        system.debug('Employee age is '+age);
+    }    
+    
+}
+
+----------------************In Debug screen:**********-------------------
+
+Employeesv2 newEmployee= new Employeesv2();
+newEmployee.name= 'Sara';
+newEmployee.title= 'System Admin';
+newEmployee.age= 34;
+newEmployee.display();
