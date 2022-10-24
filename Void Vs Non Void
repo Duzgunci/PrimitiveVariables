@@ -1,0 +1,14 @@
+Generally, you youse non-void methods when you need to get something from the object.
+
+public List<Account> getAssocAccounts(Set<Id> accIds)
+{
+  return [SELECT Id FROM Account WHERE Id IN: accIds];
+}
+
+In this case, we are passing a set of ids into this method because we need to get associated accounts with those ids.
+ 
+public void setAssocAccounts(Set<Id> accIds)
+{
+  myAccountList = [SELECT Id FROM Account WHERE Id IN: accIds];
+}
+ In this instance, we just need to do an action upon something but we dont need to return the results to the caller.
