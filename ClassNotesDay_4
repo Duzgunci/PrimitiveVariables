@@ -1,0 +1,25 @@
+
+
+public class Houses {
+
+    Integer age;
+    String type;
+    public Houses (Integer hsage, string hstype){ // constructor
+        age=hsage;
+        type=hstype;
+    }
+    public Houses(){ //constructor
+        age=45;
+        type='Apartment';
+    }
+    public void display(){ //method
+        system.debug('The house age is ' +age+ 'and type is ' +type);
+    }
+}
+
+Debug:
+
+Houses oldHouse = new Houses(150, 'Mansion');
+//oldHouse.age=100;
+//oldHouse.type='Single House';
+oldHouse.display();
