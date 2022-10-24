@@ -1,0 +1,76 @@
+------************Call a Static Method (Trailhead Challenge)*******----------------
+
+
+public class StringArrayTest {
+
+    public static list <string> generateStringArray(Integer n){
+      
+        list<string> myArray= new list<string>();
+        for(Integer i=0;i<n;i++) {
+        		
+            myArray.add ('Test '+i);
+            System.debug(myArray[i]);        
+    	}
+        return myArray;
+	}
+}
+
+-----------***************Calling ID #  Method (Trailhead Example)*************------------------
+
+Account acct= new Account (Name='Acme', Phone='(455)564-1245',NumberOfEmployees=100);
+//acct.Name='Acme';
+//acct.Phone='(455)564-1245';
+//acct.NumberOfEmployees=100;
+
+sObject sObj1= new Account (Name='Trailhead');
+insert acct;
+ID acctID= acct.id;
+system.debug('ID= '+acctID);
+
+-------*****************Adding new Contact Bulk DML operations #  Method (Trailhead Example)************----------------
+
+List <Contact> conList= new list <Contact>{
+    
+ new Contact(FirstName='Joe',LastName='Smith',Department='Finance'),
+ new Contact(FirstName='Kathy',LastName='Smith',Department='Technology'),
+ new Contact(FirstName='Caroline',LastName='Roth',Department='Finance'),
+ new Contact(FirstName='Kim',LastName='Shain',Department='Education') };
+         
+ insert conList;
+
+List <Contact> listToUpdate= new list <Contact>();
+
+for (Contact con: conList){
+    if(con.Department =='Finance'){
+        con.Title='Financial Analyst';
+        listToUpdate.add(con);
+    }   
+}
+
+update listToUpdate;
+
+-----------**************Try Catch   Method (Trailhead Example)*********---------------
+ 
+
+public class AccountHandler {
+
+    public static account insertNewAccount(string acctName) {
+       
+        try {
+        Account a= new account(Name=acctName);
+        insert a;
+        System.debug('Bravo Sara! Account created');
+        return a;
+        }
+        catch (DmlException e){
+            system.debug('A DML exception has occurred:');
+        return null;
+        }
+     } 
+                       
+}
+
+
+
+
+
