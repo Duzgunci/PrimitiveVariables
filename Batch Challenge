@@ -1,0 +1,46 @@
+public class ClaruswayBatch2 {
+
+    Public String stdntinfo;
+    String[] batchOne= new List <string>();
+	String[] batchTwo= new List <string>();
+    String[] batchThree= new List <string>();
+    Map<String, List<String>> clswayBatches= new Map<String, List<string>>();
+    
+    public List<String> stdntOfBatchOne (Integer numOfStdts){
+        for(Integer i=0; numOfStdts>i; i++){
+         stdntInfo='Batch-1 Student-' +i;
+         batchOne.add(stdntInfo);    
+        }   
+    system.debug('Students of Batch-1' +batchOne);
+    return batchOne;
+    
+    }
+    
+    public List<String> stdntOfBatchTwo (Integer numOfStdts){
+        for(Integer i=0; numOfStdts>i; i++){
+         stdntInfo='Batch-2 Student-' +i;
+         batchTwo.add(stdntInfo);    
+        }   
+    system.debug('Students of Batch-2' +batchTwo);
+    return batchTwo;
+    
+    }
+    
+   public List<String> stdntOfBatchThree (Integer numOfStdts){
+        for(Integer i=0; numOfStdts>i; i++){
+         stdntInfo='Batch-3 Student-' +i;
+         batchThree.add(stdntInfo);    
+        }   
+    system.debug('Students of Batch-3' +batchThree);
+    return batchThree;
+    
+    }
+    
+
+    public void ClaruswayAll(){
+        clswayBatches.put('Batch-1',batchOne);
+        clswayBatches.put('Batch-2',batchTwo);
+        clswayBatches.put('Batch-3',batchThree);
+        system.debug('All Students are in Clarusway Batches:' +clswayBatches);
+    }    
+       }
