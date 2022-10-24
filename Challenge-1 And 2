@@ -64,4 +64,31 @@ system.debug('Max pays $ '+maxPays);
 
 totalBill=hasanPays+ahmetPays+maxPays;
     system.debug('Total Bill is $' +totalBill);
+    
+    
+ ----------****************Homework
+
+// Try this example in Apex class make sure users input those number of slices for Hasan, Ahmet and Max
+
+-----------*****************Answer:
+
+public class Bill {
+ 	public String Name;
+    public Integer totalBill;
+    
+    public void calBill(Integer X){ 
+        
+        if (X <= 2){
+        totalBill= X*8; 
+        
+    	}else if (X<=3){
+        totalBill=X*7;
+        
+    }else {
+        totalBill=X*6;
+    }
+      system.debug(name+ 'TotalBill is' +totalBill);   
+  }
+}
+
 
