@@ -1,0 +1,185 @@
+----------------SLAYT1:
+integer i=0;
+while (i<15){
+   i++;
+   if (i<8 && i>5){
+       system.debug('WEEKEND');
+       continue;
+   }
+   if (i==13){
+       break;
+   }
+   system.debug(i+' . Day of Flow Course Plan');
+}
+
+---------------SLAYT2:
+integer studentScore= 95;
+if (studentScore>=90){
+   system.debug('A');
+} else if (studentScore>=80){
+   system.debug('B');
+} else if (studentScore>=70){
+   system.debug('C');
+} else if (studentScore>=60){
+   system.debug('D');
+} else if (studentScore>=50){
+   system.debug('E');
+} else {
+   system.debug('F');
+}
+---------------SLAYT3:
+GREETING APEX CLASS CODE;
+public class Greeting {
+   string firstName='Hacer';
+   public string fullName(){
+        string lastName='SOMUN';
+        string wholeName=firstName+' '+lastName;
+         return wholeName;
+   }
+}
+CALL SCREEN CODE;
+Greeting testname=new Greeting();
+system.debug(testname.fullName());
+
+
+-------------SLAYT4;
+GREETING APEX CLASS CODE:
+public class Greeting {
+   string firstName='Hacer';
+   public string fullName(){
+        string lastName='SOMUN';
+        string fullName=firstName+' '+lastName;
+         return fullName;
+   }
+   public string greeting(){
+       string greeting='Hi';
+       string greet=(greeting+ ' '+ fullName());
+       return greet;
+   }
+}
+CALL SCREEN CODE:
+Greeting testname=new Greeting();
+system.debug(testname.greeting());
+SLAYT5:
+PART1---> ADDING LIST WITH (HI+FULL NAME)
+GREETING APEX CLASS CODE;
+public class Greeting {
+   string firstName='Hacer';
+   public string fullName(){
+        string lastName='SOMUN';
+        string fullName=firstName+' '+lastName;
+         return fullName;
+   }
+   public string greeting(){
+       string greeting='Hi';
+       string greet=(greeting+ ' '+ fullName());
+       return greet;
+   }
+   public void greetingAll(List<string> nameList){
+       for (string workshop:nameList){
+           system.debug('Hi'+ ' '+ workshop);
+       }
+   }
+}
+SCREEN CODE;
+Greeting testname=new Greeting();
+List<string> nameList= New List <string>();
+nameList.add('Hacer Somun');
+nameList.add('Sara Maple');
+nameList.add('Jansaya  Mauyei');
+nameList.add('Bayram Akarsu');
+nameList.add('Alyssa C');
+testName.greetingAll(nameList);
+
+
+PART2---->WITH (HI+FIRST NAME)
+GREETING APEX CLASS CODE:
+public class Greeting {
+   string firstName='Hacer';
+   public string fullName(){
+        string lastName='SOMUN';
+        string fullName=firstName+' '+lastName;
+         return fullName;
+   }
+   public string greeting(){
+       string greeting='Hi';
+       string greet=(greeting+ ' '+ fullName());
+       return greet;
+   }
+   public void greetingAll(List<string> nameList){
+       for (string workshop:nameList){
+           system.debug('Hi'+ ' '+ workshop);
+       }   
+   }
+   public void greetingAllButLast (List<string> nameList){
+       for (string test1:nameList){
+           system.debug('Hi'+' '+ test1.split(' ',2)[0]);
+         
+       }
+   }
+}
+CALL SCREEN CODE:
+Greeting testname=new Greeting();
+List<string> nameList= New List <string>();
+nameList.add('Hacer Somun');
+nameList.add('Sara Maple');
+nameList.add('Jansaya  Mauyei');
+nameList.add('Bayram Akarsu');
+nameList.add('Alyssa C');
+//testName.greetingAll(nameList);
+testName.greetingAllButLast(nameList);
+===========PART3---->
+GREETING APEX CLASS CODE:
+public class Greeting {
+   string firstName='Hacer';
+   public string fullName(){
+        string lastName='SOMUN';
+        string fullName=firstName+' '+lastName;
+         return fullName;
+   }
+   public string greeting(){
+       string greeting='Hi';
+       string greet=(greeting+ ' '+ fullName());
+       return greet;
+   }
+   public void greetingAll(List<string> nameList){
+       for (string workshop:nameList){
+           system.debug('Hi'+ ' '+ workshop);
+       }   
+   }
+   public void greetingAllButLast (List<string> nameList){
+       for (string test1:nameList){
+           system.debug('Hi'+' '+ test1.split(' ',2)[0]);
+           }
+   }
+   public void greetingToHacer(List<string> nameList){
+       for (string test2:nameList){
+           string test3=test2.split(' ',2)[0];
+           if (test3=='Hacer'){
+               system.debug('Hi'+ ' ' +test2.split(' ',2)[0]);
+           }else {}
+       }
+   }
+}
+CALL SCREEN CODE:
+Greeting testname=new Greeting();
+List<string> nameList= New List <string>();
+nameList.add('Hacer Somun');
+nameList.add('Sara Maple');
+nameList.add('Jansaya  Mauyei');
+nameList.add('Bayram Akarsu');
+nameList.add('Alyssa C');
+//testName.greetingAll(nameList);
+//testName.greetingAllButLast(nameList);
+testName.greetingToHacer(nameList);
+
+
+
+
+
+
+
+
+
+
+
