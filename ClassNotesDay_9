@@ -1,0 +1,63 @@
+Company class
+     
+// Company (string companyName, string CEO, integer numOfEmployees, Long revenue) class stores information about the company and its customers.
+// Customers have string clientName, string website, string email, long phone (List of Customers)
+// User inputs customer information
+public class Company {
+ 	public string companyName;
+    public string CEO;
+    public integer numOfEmployees;
+    public long revenue;
+    
+// list of customers
+   List<Client> customers=new List<Client>(); //client is serving as a DATATYPE for list
+
+// here we build a method that adds customers to the customers list with user input  
+    public void addNewCustomer(String clntName, String clntwebsite,string clntemail,Long clntphone){
+        client myCustmr= new Client(clntName, clntwebsite,clntemail,clntphone );//Here I am calling  a constructor of Client class
+        // Here, myCustmr has name, website, email, phone. Then we add this customer to the list.
+ customers.add(myCustmr);
+     
+        
+    }   
+    
+    //Below method does not have anything related to the customers.We only get company info.
+    public void display(string compName, string compCEO,integer compEmployees, Long compRevenue){
+        system.debug('Company name is '+compName+ ' Company CEO is '+compCEO+ ' Company # of employees is '+compEmployees+ ' Company revenue is '+compRevenue);
+        for(integer i=0; i<customers.size();i++){
+            system.debug('Customer ' +(i+1)+' name '+customers[i].clientName+' website is '+customers[i].website+ ' email is '+customers[i].email+' phone is ' +customers[i].phone);
+        }
+    
+    }
+   
+    
+  // Here we define an inner class for Clients 
+    public class Client{ //inner class
+        Public String clientName;
+        Public String website;
+        Public string email;
+        Public Long phone;
+   // Here we define a constructor for the inner class    
+        public Client(String clntName, String clntwebsite,string clntemail,Long 
+        clntphone){
+           clientName= clntName;
+           this.website= clntwebsite;
+           this.email= clntemail;
+           this.phone= clntphone;
+            
+        }
+        
+        
+        
+    }  
+}
+Debug Screen:
+
+Company myComp=new Company();
+myComp.addNewCustomer('CL1', 'www.cl1.com', 'client1@cl1.com',48096000001L);
+myComp.addNewCustomer('CL2', 'www.cl2.com', 'client2@cl1.com',48096000002L);
+myComp.addNewCustomer('CL3', 'www.cl3.com', 'client3@cl1.com',48096000003L);
+myComp.addNewCustomer('CL4', 'www.cl4.com', 'client4@cl1.com',48096000004L);
+myComp.addNewCustomer('CL5', 'www.cl5.com', 'client5@cl1.com',48096000005L);
+myComp.display('Clarusway','Sergio',50,100000000000L);
+
