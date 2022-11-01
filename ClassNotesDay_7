@@ -1,0 +1,76 @@
+Account myAcct= new Account(Name='Apex Account', BillingCity='Phoenix'); // We have account
+Account yourAcct=new Account();
+yourAcct.Name='Home Account';
+yourAcct.BillingCity='New York';
+List <Account>myAcctList=new List<Account>{myAcct,yourAcct};
+system.debug('My accounts list '+myAcctList);
+Account newAcct = new Account(Name='Company Account', BillingCity='Kansas');
+myAcctList.add(newAcct);
+system.debug('My accounts list '+myAcctList);
+insert.myAcctList;
+
+
+Map <Id,Account> myAcctMap = new Map <Id, Account>();//Account records must have an ID
+myAcctMap.putAll(myAcctList);
+system.debug('My account map '+myAcctMap);
+
+Map <Integer,String> myMap = new Map <Integer, String>{12=>'Mark', 13=> 'Mary', 14=>'Mark', 20=>'Bega'};
+myMap.put(105, 'Kenny');
+string myName= myMap.remove(20);// remove method removes that value and assigning /returning that value
+system.debug('My name is  ' +myName);
+
+system.debug(myMap.get(12)+ ' ' +myMap.get(14));
+system.debug(myMap.values());
+
+
+Map<integer, string> newMap=new Map<Integer, String>();
+newMap=myMap.clone();
+
+--------Apex Class Example
+
+public class HelloworldV2 { // access modifier is public
+
+    string greeting ='Hello World'; // Private access modifier is default for variables, methods, or inner classes. Restricts access with outer class scope
+    public void myGreeting(){// This is non-static method so, you initialize the object firstly.
+        system.debug(greeting);     
+    }
+    
+    public static string myWelcome(){ // static methods can be called directly from the class without declaration.
+     	system.debug('Welcome to Salesforce, APEX!');
+        return null;   
+    }
+}
+
+
+-----------System Debug: (Calling) 
+
+HelloWorldV2 myApex= new HelloWorldV2(); //I am inializing an object
+HelloWorldV2.myWelcome();//This is because myWelcome is a static method
+myApex.myGreeting();// this is because myGreeting() is non static method
+
+
+-----------Class Challenge
+
+public class Fitness {
+
+    public void calculateBMI(decimal weight, decimal height){
+    	decimal finalBMI;
+   		finalBMI= weight/(weight*height);
+        system.debug('Calculated BMI is ' +finalBMI);
+                    }
+    
+    public void calculatePace(decimal distance, decimal minutes ){
+        decimal finalPace;
+        decimal hour;
+        hour=minutes/60;
+        finalPace= distance/hour; 
+        system.debug('Calculated Pace is ' +finalPace);
+   }
+}
+
+---------------Debug Calling
+
+Fitness myFitness= new Fitness();
+myFitness.calculateBMI(60, 162);
+myFitness.calculatePace(70,120);
+
