@@ -1,0 +1,53 @@
+Continue and Break Statements
+
+integer num=1;
+while (num<20){// if it is true, it will run
+   num++;
+   if (num<=5 || num>=15){
+       system.debug(num+ 'Continue statement');
+       continue;
+   }
+   if (num==12){
+       break;
+   }
+   system.debug(num+ 'Break Statement');
+}
+
+====================================================================
+
+integer myInt=1;
+
+while(myInt<21){
+    
+  system.debug ('In while loop before my integer is '+myInt);
+   myInt++;
+    
+    if (myInt==12){
+        system.debug('My integer is '+myInt);
+        break;
+    }else if(myInt<=5 || myInt>=15){// 6 is not in that range
+        system.debug('My integer before continue is '+myInt);
+        continue;
+        system.debug('My integer before continue is '+myInt);
+    }
+
+    
+ system.debug('Out of while loop my integer is '+myInt);   
+}   
+====================================================================
+for(integer myInt=1; myInt<21; myInt++){  
+  system.debug ('In for loop before my integer is '+myInt);
+   
+    if (myInt==12){
+        system.debug('My integer is '+myInt);
+        break;
+    }else if(myInt<=5 || myInt>=15){// 6 is not in that range
+        system.debug('My integer before continue is '+myInt);
+        continue;
+        system.debug('My integer before continue is '+myInt);
+    }
+
+    
+ system.debug('Out of while loop my integer is '+myInt);   
+}   
+====================================================
