@@ -1,0 +1,6 @@
+decimal mydec = 4;
+    do {
+        system.debug((mydec-3)/mydec);
+        mydec++;
+    } while (mydec<=14);
+    
