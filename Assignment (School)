@@ -1,0 +1,95 @@
+Assignment:
+
+ApexClass Task: Write an apex class that displays school properties (String Name, String Type (Middle School, High School etc), String Director, Integer Budget, Date openDate) and students' info (String Name, Integer Age, String Class(7A, 10B, 3F etc), Boolean isActive)
+
+public class SchoolProperties {
+    
+	String schoolName;
+	String schoolType;
+	String schoolDirector;
+    Integer schoolBudget;
+    Date schoolOpenDate;
+
+    public list <SchoolProperties> schools=new list<SchoolProperties>();
+public SchoolProperties(String  schlName, String schlType,String  schlDirector,Integer schlBudget,Date schlOpenDate){
+        
+		schoolName=schlName;
+        schoolType=schlType;
+        schoolDirector=schlDirector;
+        schoolBudget=schlBudget;
+        schoolOpenDate=schlOpenDate;
+        
+    }
+    
+    //public SchoolProperties(){
+        
+   // }
+    
+    
+    public static void addSchool(String  schlName, String schlType,String  schlDirector,Integer schlBudget,Date schlOpenDate){
+    SchoolProperties newSchool = new SchoolProperties(schlName,schlType,schlDirector,schlBudget,schlOpenDate);
+    schools.add(newSchool);
+    }
+    
+public void schoolDisplay(){
+        for(integer t=0; t< students.size();t++){
+            system.debug('The school ' +(t+1)+ ' name is ' +schools[t].schoolName+ ' -The school type is '+schools[t].schoolType+' -The school director is  '+schools[t].schoolDirector+' - The School budget is '+schools[t].schoolBudget+ ' The school will be open at '+schools[t].schoolOpenDate);
+        }
+    }    
+    
+    public list <studentInfo> students= new list<studentInfo>();   
+    
+    public void addStudent(String  stdName, Integer stdAge,String  stdClass,Boolean status){
+    studentInfo newStudent = new studentInfo(stdName,stdAge,stdClass,status);
+    students.add(newStudent);
+    }
+    
+    public void studentDisplay(){
+        for(integer i=0; i< students.size();i++){
+            system.debug('The student ' +(i+1)+ ' name is ' +students[i].studentName+ ' -The student age is '+students[i].studentAge+' -The student class is  '+students[i].studentClass+' - Is student status actve? '+students[i].isActive);
+        }
+    }    
+    //Inner Class
+    public class studentInfo{
+      public String  studentName;
+    public Integer studentAge;
+    public String  studentClass;
+    public Boolean isActive;
+        
+     //Here we define constructor
+    public studentInfo(String  stdName, Integer stdAge,String  stdClass,Boolean status){
+          studentName=stdName;
+          studentAge=stdAge;
+          studentClass=stdClass;
+          isActive=status;
+            
+        }
+    }
+       
+}
+Debug Screen:
+
+SchoolProperties myStudent=new SchoolProperties();
+myStudent.addStudent('Sara Maple', 14, 'Middle School',True);
+myStudent.addStudent('Tim Maple', 17, 'High School',False);
+myStudent.addStudent('John Smith', 13, 'Middle School',True);
+myStudent.addStudent('Lindsay Kearns', 16, 'High School',False);
+myStudent.addStudent('Rita Gallegos', 12, 'Middle School',True);
+myStudent.studentDisplay();
+
+SchoolProperties myStudent=new SchoolProperties();
+myStudent.addStudent('Sara Maple', 14, 'Middle School',True);
+myStudent.addStudent('Tim Maple', 17, 'High School',False);
+myStudent.addStudent('John Smith', 13, 'Middle School',True);
+myStudent.addStudent('Lindsay Kearns', 16, 'High School',False);
+myStudent.addStudent('Rita Gallegos', 12, 'Middle School',True);
+myStudent.studentDisplay();
+
+SchoolProperties mySchool=new SchoolProperties();
+mySchool.addSchool('Venado', 'Middle School','Luis Torres', 10000, 2022-09-22 );
+mySchool.addSchool('University','High School','Frank Johnson', 20000, 2022-09-22 );
+mySchool.addSchool('Lakeside', 'Middle School','Norma Gallardo', 30000, 2022-09-22 );
+mySchool.addSchool('StoneCreek', 'High School','Molly Siple',40000, 2022-09-22);
+mySchool.addSchool('Jeffrey Trail','Middle School','Sarah Chade', 20000, 2022-09-22);
+mySchool.schoolDisplay();
+
