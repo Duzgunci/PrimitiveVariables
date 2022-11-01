@@ -1,0 +1,78 @@
+APEX Car Class
+// Cars have make, color, year, isClean ---> user inputs these values
+// Write a method that returns Boolean (luxuryCar --->'Lexus', 'Tesla')
+// Displays outcome system debug
+
+    public class CarsV2 {
+      public string make;
+      public string color;
+      public integer year;
+      Public Boolean isClean;
+     
+        // Here we define empty list of cars
+    Public List<CarsV2> myCars=new List<CarsV2>();
+    
+        // Here is the constructor to input values (parameters) for variables
+    Public CarsV2(String mk, String clr,integer yr,Boolean isCln){
+           make= mk;
+           this.color= clr;
+           this.year= yr;
+           this.isClean= isCln;  
+        }  
+        Public CarsV2(){ // We define an empty constructor
+            
+        }
+        
+        
+        Public void addCars(String mk, String clr,integer yr,Boolean isCln){
+        CarsV2  anyCar= new CarsV2(mk,clr,yr,isCln);//Here I defined one car with 4 features
+        myCars.add(anyCar);
+        } 
+        
+        Public void showAllFeatures(){
+            for(integer i=0; i<myCars.size();i++){
+ system.debug('Car '+(i+1)+' make is '+myCars[i].make+ ' color is '+myCars[i].color+ ' age is '+myCars[i].year+ 'years, and clean title: '+myCars[i].isClean);
+            }    
+            
+        }   
+        
+    public Boolean luxuryCar(String makeOfCar){
+        Boolean isLuxury;
+        this.make=makeOfCar;
+        
+        if(make=='Lexus'|| make=='Tesla'){
+           system.debug (make+ 'is a luxury car');
+           isLuxury=True; 
+           }
+        else{
+            system.debug(make+' is not a luxury car!');
+            isLuxury=False;
+        }
+        return isLuxury;//if you use void, you don't need a return value
+    } 
+        
+        public list<String> carFeatures(string makeOfCar, string colorOfCar){
+            
+            this.make=makeOfCar;
+            this.color=colorOfCar;
+            List <string> myCarFeatures= new list <string>{make, color};
+            return myCarFeatures;
+              }
+      
+    
+    }
+
+
+
+
+Debug Screen:
+  
+ CarsV2 cars=new CarsV2();
+cars.addCars('Toyota','White',5,True);
+cars.addCars('Tesla','Red',7,True);
+cars.addCars('Honda','Blue',4,False);
+cars.addCars('Nissan','Pink',10,True);
+cars.addCars('GMC','Green',8,False);
+cars.showAllFeatures();
+
+
