@@ -1,0 +1,135 @@
+/*
+list<integer> myInts= new list<Integer>{1,2,3,4,5};
+system.debug('My integers' +myInts);
+
+myInts.add(10);
+system.debug('My integers' +myInts);
+*/
+List<string> myStrings= new List<string>{'One','Two','Three','Four','Five','Six'};
+integer sizeOfMyList= myStrings.size();
+system.debug('My strings are ' +myStrings + 'The size of my List is ' +sizeOfMyList);
+string initialindxString=myStrings.get(2);
+system.debug('Index two of the string '+initialindxString);
+
+myStrings.add(2,'NewThree');
+
+string firstString=myStrings.get(0);
+string lastString=myStrings.get(sizeOfMylist-1);
+string scndString=myStrings[1];
+string oneBeforeLastString=myStrings[sizeOfMyList-2];
+string indx2String= myStrings [2];
+
+system.debug(' First String '+firstString+  ' LastString '+lastString+ ' Second String ' +scndString+  ' One before last string ' +oneBeforeLastString);
+system.debug('Index two of the string '+indx2String);
+
+integer indxOfSix=myStrings.indexOf('Six'); // the outcome will be 6
+system.debug('Index value of six ' +indxOfSix);
+//////***************************
+List<String> yourStrings=new List<string>(myStrings);
+system.debug('Your strings  ' +yourStrings);
+
+//////***************************
+
+string[] carsList= new string[3];
+
+carsList[0]='BMW';
+carsList[1]='Toyota';
+carsList[2]='Tesla';
+//carsList[3]='Acura';// This will give us an error if string size is 3
+carsList.add('Lexus');
+//carsList.add('Lotus');
+
+system.debug(' List of cars are ' +carsList+ ' The size of carsList is ' +carsList.size());
+Account myAcct = new Account();
+myAcct.Name='Salesforce';
+myAcct.BillingCity='San Francisco';
+Account yourAcct= new Account(Name='Clarusway', BillingCity='New York');
+//List <Account> accts=new List<Account>();
+//accts.add(myAcct);
+//accts.add(yourAcct);
+//List<Account> accts=new List <Account> {myAcct,yourAcc};
+
+Account[] accts= new Account[]{myAcct, yourAcct};
+accts[0].BillingCity='Phoenix';//we should refer to index since it is a list
+    
+system.debug('All accounts '+accts);
+
+List<Account> newAccts=accts.clone();//Here we clone existing list
+
+system.debug('All accounts '+newAccts);
+
+List<Account> finalAccts=new List<Account>(accts);//Here we copy existing list
+system.debug('All accounts '+finalAccts);
+
+accts[1].Name='DreamForce';
+system.debug('All accounts '+accts);
+
+*******************
+Map <Integer,String> myMapOne= new Map<Integer, String>();
+system.debug('MyMapOne is ' +myMapOne);
+myMapOne.put(12,'Twelve');
+system.debug('MyMapOne is ' +myMapOne);
+myMapOne.put(10,'Ten');
+system.debug('MyMapOne is ' +myMapOne);
+myMapOne.put(12,'NewTwelve');
+system.debug('MyMapOne is ' +myMapOne);
+
+Map <Id, Account> myMap= new Map <Id, Account>();
+system.debug('Empty mymap '+myMap);
+List<Account> myAccts= new List<Account>();
+myAccts=[SELECT Id, Name, BillingCity From Account];
+//List<Account> myAccts=[SELECT Id, Name, BillingCity From Account];
+myMap.putAll(myAccts);// putAll method assigns all list
+system.debug('Updated '+myMap);
+
+// You are in a contest. The medals are Gold -->1, Silver ---> 2, Bronze ---->3, Nothing --->4 
+
+// = this sign assigns the left side value to the right side variable
+Integer place=2;
+string medalType;
+//
+if (place==1){
+    medalType='Gold';
+    system.debug('You got gold medal ')
+}else if (place==2){
+    medalType='Silver';
+        system.debug('You got silver medal ')
+
+}else if (place==3){
+    medalType='Bronze';
+        system.debug('You got bronze medal ')
+
+}else {
+    system.debug('Try next time ')
+}     
+       
+    if(medalType!=null){// if(place<=3)
+        
+    system.debug('Congratulations!' +medalType!=null);       
+    
+    }   
+
+ //   try this in a class that user inputs the place
+// A year is leap year , if it is evenly divisible by 4
+// Except if that is a year is also evenly divisible by 100
+//Unless the year is also evenly divisible by 400
+    
+*/    
+    
+Integer year=2024;
+if(Math.mod(year, 4)==0){
+    if(Math.mod(year, 100)==0){
+        if(Math.mod(year, 400)==0){
+            system.debug(year+ ' is a leap year');
+        }else{
+            system.debug(year+ ' is not a leap year');
+        }
+    }else{
+        system.debug(year+ ' is a leap year');
+    }
+}else{
+    system.debug(year+ ' is not a leap year');
+}
+
+//integer x=math.mod(500,3);
+//system.debug ('x is ' +x);
